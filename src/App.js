@@ -14,10 +14,14 @@ let colorMap = colors.map((color, i) => {
     <ColorBlock key={`${color}_${i}`} color={color} />
   )
 })
+
+const addColor = (newColor) => {
+  setColors([colors, newColor])
+}
   return (
     <div className="App">
       {colorMap}
-      <ColorForm/>
+      <ColorForm addColor={addColor}/>
     </div>
     
   )
